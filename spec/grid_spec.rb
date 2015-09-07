@@ -8,10 +8,23 @@ require 'board'
 
 
 describe Board do
-	xit 'creates a board'
+	subject { Board.new }
 
-	subject = Board.new
-	expect(subject).to be_kind_of Board
+	it 'creates a board' do
+		expect(subject).to be_kind_of Board
+	end
+
+	it 'creates a hash with cells' do
+		expect(subject.grid).to be_kind_of Hash 
+	end
+
+	it 'fills #grid with keys in right range' do
+		l = [*'A'..'C'].sample(1)[0]
+		n = [*1..3].sample(1)[0]
+		expect(subject.grid).to have_key "#{l}#{n}".to_sym
+	end
+
+	
 
 
 end
