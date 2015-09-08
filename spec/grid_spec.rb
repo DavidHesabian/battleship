@@ -1,5 +1,5 @@
 require 'board' 
-
+require 'ship'
 # Grid must know its size so players know where the 
 # boundaries of their placing of the ships are and that
 # so no one shoots out-of-bounds
@@ -22,9 +22,8 @@ describe Board do
 		l = [*'A'..'C'].sample(1)[0]
 		n = [*1..3].sample(1)[0]
 		expect(subject.grid).to have_key "#{l}#{n}".to_sym
+
 	end
-
-	
-
+    
 
 end
